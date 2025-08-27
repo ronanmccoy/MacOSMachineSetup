@@ -32,20 +32,28 @@ APPS=(
 	awscli
 	curl
 	darktable
+	discord
 	dropbox
 	gimp
 	git
 	git-flow
 	gh
 	google-chrome
+	google-earth-pro
 	iterm2
+	kdiff3
 	keepassx
+	mongodb-compass
+	ngrok
 	node
 	nvm
 	opera
+	pgadmin4
 	postman
+	shotcut
 	slack
 	spotify
+	stellarium
 	telnet
 	vlc
 	watchman
