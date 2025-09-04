@@ -37,6 +37,7 @@ fi
 # ------------------------
 APPS=(
 	awscli
+	aws-cdk
 	curl
 	darktable
 	discord

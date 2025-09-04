@@ -43,4 +43,5 @@ This list of extensions will eventually be added to the `mac_setup.sh` script.
 
 ## To Do
 
-- update the aws_setup.sh to include [AWS-CDK](https://github.com/aws/aws-cdk?tab=readme-ov-file#getting-started).
+- Update the aws_setup.sh to include [AWS-CDK](https://github.com/aws/aws-cdk?tab=readme-ov-file#getting-started). Might it be best installed via homebrew?
+- Consider installing Typescript with homebrew.
