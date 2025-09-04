@@ -40,3 +40,7 @@ If setting up AWS CLI, have available all the necessary credential information.
 - vscode-icons
 
 This list of extensions will eventually be added to the `mac_setup.sh` script.
+
+## To Do
+
+- update the aws_setup.sh to include [AWS-CDK](https://github.com/aws/aws-cdk?tab=readme-ov-file#getting-started).
