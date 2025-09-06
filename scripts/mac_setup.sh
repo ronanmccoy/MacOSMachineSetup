@@ -49,6 +49,7 @@ APPS=(
 	google-chrome
 	google-earth-pro
 	iterm2
+	warp
 	kdiff3
 	keepassx
 	mongodb-compass

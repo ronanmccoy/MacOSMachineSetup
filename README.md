@@ -6,7 +6,7 @@ A set of scripts for setting up a new mac for dev work. This is specific to me a
 
 ## Requirements
 
-If setting up AWS CLI, have available all the necessary credential information.
+If setting up AWS CLI, have available all the necessary credential information (AWS access key from user account in IAM dashboard and add it to `~/.aws/credentials` file ).
 
 ## Installation and Usage
 
