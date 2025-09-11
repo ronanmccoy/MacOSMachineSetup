@@ -36,11 +36,15 @@ fi
 # apps for installation
 # ------------------------
 APPS=(
+	android-studio
 	awscli
 	aws-cdk
+	blender
 	curl
+	cursor
 	darktable
 	discord
+	docker-desktop
 	dropbox
 	gimp
 	git
@@ -49,7 +53,6 @@ APPS=(
 	google-chrome
 	google-earth-pro
 	iterm2
-	warp
 	kdiff3
 	keepassx
 	mongodb-compass
@@ -62,16 +65,16 @@ APPS=(
 	slack
 	spotify
 	stellarium
+	sublime-text
 	telnet
+	visual-studio-code	
 	vlc
+	warp
 	watchman
 	wget
 	wireshark
 	yarn
-	android-studio
-	cursor
-	sublime-text
-	visual-studio-code	
+	zoom
 )
 
 FAILED_APPS=()
