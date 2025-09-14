@@ -1,4 +1,4 @@
-# list npm packages here for installation
+# list npm packages here for global installation
 # use `#` to comment
 typescript
 ts-node
