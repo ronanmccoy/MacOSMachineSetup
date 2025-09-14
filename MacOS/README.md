@@ -2,7 +2,7 @@
 
 ## Intro
 
-Scripts to do the initial setup on MacOs.
+Scripts specific to MacOS. Uses Homebrew to install apps.
 
 ## Instructions
 
@@ -62,3 +62,4 @@ This list of extensions will eventually be added to the `mac_setup.sh` script.
 - [ ] add a prompt asking if the iTerms theme should be installed or skipped.
 - [ ] add a prompt asking if the settings update to VS Code should be done.
 - [ ] add a prompt asking if the shell prompt should be set up to show git branch information.
+- [ ] updated script to install VS Code extensions and list the extensions in an external file.
