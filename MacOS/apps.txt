@@ -1,0 +1,45 @@
+# -------------------------------------------------------------------------
+# MacOS Setup - Applications List
+# This file contains package names for Homebrew installable apps
+# Lines starting with # are comments and will be ignored
+# Empty lines are also ignored
+# -------------------------------------------------------------------------
+android-studio
+awscli
+aws-cdk
+blender
+curl
+cursor
+darktable
+discord
+docker-desktop
+dropbox
+gimp
+git
+git-flow
+gh
+google-chrome
+google-earth-pro
+iterm2
+kdiff3
+keepassx
+mongodb-compass
+ngrok
+nvm
+opera
+pgadmin4
+postman
+shotcut
+slack
+spotify
+stellarium
+sublime-text
+telnet
+visual-studio-code	
+vlc
+warp
+watchman
+wget
+wireshark
+yarn
+zoom
