@@ -13,8 +13,8 @@
 #	failed to install, if any. Or it will confirm that all
 #	apps and packages were installed successfully.
 #
-#	IMPORTANT NOTE: the Windows Terminal theme file, WindowsTerminal-Theme.json
-#	is expected to be in a folder called `themes` that's one level
+#	IMPORTANT NOTE: the Windows Terminal theme file, WindowsTerminal-Ronans-Theme.json
+#	is expected to be in the path `\data\themes` that's one level
 #	above where this script is.
 # ----------------------------------------------------------------
 
@@ -111,7 +111,11 @@ Write-Host "--> Setting up Node.js via nvm-windows (if installed)..."
 if (Get-Command nvm -ErrorAction SilentlyContinue) {
     try {
         nvm install latest
-        nvm use (nvm list | Select-String "latest" | ForEach-Object { $_.ToString().Trim() })
+        # nvm use (nvm list | Select-String "latest" | ForEach-Object { $_.ToString().Trim() })
+        $versions = nvm list
+        if ($versions) {
+            nvm use node  # or use the specific version
+        }
         Write-Host "    Node.js installed via nvm" -ForegroundColor Green
     } catch {
         Write-Host "    Failed to install Node.js via nvm" -ForegroundColor Yellow
