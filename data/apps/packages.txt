@@ -1,0 +1,5 @@
+# list npm packages here for installation
+# use `#` to comment
+typescript
+ts-node
+@anthropic-ai/claude-code

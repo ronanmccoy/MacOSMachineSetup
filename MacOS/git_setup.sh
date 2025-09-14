@@ -119,7 +119,8 @@ echo "--> global git config updated:"
 git config --list | grep -E "user.name|user.email|core.excludefile"
 
 echo
-echo "Test SSH connection to GitHub with:"
+echo "After adding the SSH key to Github, test SSH connection to GitHub with:"
 echo "ssh -T git@github.com"
-
+echo
+echo "--> done! 👋 "
 
