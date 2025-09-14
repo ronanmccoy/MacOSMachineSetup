@@ -9,7 +9,7 @@ A set of scripts for setting up a new dev machine. The idea here is to quickly d
 - `/data` - list of NPM packages and theme files are stored here.
 - `/Linux` - this is a "to do".
 - `/MacOS` - list of apps to install for MacOS and the script to run individually.
-- `/Windows` - this is a "to do".
+- `/Windows` - this has some **_untested_** scripts.
 
 ## Requirements
 
@@ -28,37 +28,10 @@ A set of scripts for setting up a new dev machine. The idea here is to quickly d
 5. `cd` into the directory specific to your platform (currently this has only been tested on MacOS).
 6. Update the list of apps in `apps.txt` if needed.
 7. From the terminal run the appropriate script.
-   ~~ - `sh [PLATFORM]_setup.sh` (e.g. `sh mac_setup.sh`)~~
-   ~~ - `sh git_setup.sh` (if setting up git)~~
-   ~~ - `sh aws_setup.sh` (if setting up AWS)~~
-   ~~8. (Optional) delete the scripts and the directory when done.~~
-
-## Additional Steps
-
-1. The `mac_setup.sh` script only installs a set of predefined apps and an iTerm theme. After running both scripts, open iTerm and set the new theme as the default if so desired.
-
-2. Also, after running the scripts, you will need to install VS Code extensions as needed. For starters I install the following extensions (note this will be an ever-evolving list):
-
-- Auto Rename Tag
-- Better Comments
-- Bookmarks
-- Claude Code for VSCode
-- ES7+React/Redux/React-Native snippets
-- ESLint
-- Github Copilot
-- Github Copilot Chat
-- Javascript and Typescript Nightly
-- npm Intellisense
-- Prettier - Code Formatter
-- Tailwind CSS Intellisense
-- Todo Tree
-- vscode-icons
-
-This list of extensions will eventually be added to the `mac_setup.sh` script.
 
 ## To Do
 
 - [ ] Add [AWS-CDK](https://github.com/aws/aws-cdk?tab=readme-ov-file#getting-started).
 - [ ] Add theme files for other terminal apps (e.g. Warp)
-- [ ] Add scripts for setting up Windows.
+- [ ] Test scripts for setting up Windows.
 - [ ] Add scripts for setting up Linux.
