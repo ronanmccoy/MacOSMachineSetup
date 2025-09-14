@@ -1,0 +1,51 @@
+# -------------------------------------------------------------------------
+# Windows Development Setup - Applications List
+# This file contains Chocolatey package names for automated installation
+# Lines starting with # are comments and will be ignored
+# Empty lines are also ignored
+# -------------------------------------------------------------------------
+git
+nodejs
+nvm
+python
+vscode
+sublimetext3
+googlechrome
+dbeaver
+redis
+mongodb
+postman
+curl
+docker-desktop
+docker-compose
+windows-terminal
+powershell-core
+openssh
+wget
+slack
+zoom
+teams
+7zip
+winrar
+vlc
+gimp
+figma
+sysinternals
+procexp
+autoruns
+googledrive
+dropbox
+keepassxc
+bitwarden
+malwarebytes
+android-sdk
+androidstudio
+yarn
+pnpm
+jq
+grep
+sed
+make
+spotify
+redisinsight
+pgadmin4

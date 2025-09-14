@@ -21,8 +21,8 @@
 # ----------------------------------------------------------------
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-APP_LIST_FILE="$SCRIPT_DIR/../data/apps/apps.txt"
-NPM_PACKAGES_FILE="$SCRIPT_DIR/../data/apps/packages.txt"
+APP_LIST_FILE="$SCRIPT_DIR/apps.txt"
+NPM_PACKAGES_FILE="$SCRIPT_DIR/../data/packages/packages.txt"
 ITERM_THEME_FILE="$SCRIPT_DIR/../data/themes/iTerm-Ronans-Theme.json"
 
 # ------------------------
