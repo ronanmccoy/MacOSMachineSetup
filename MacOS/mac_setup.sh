@@ -4,15 +4,26 @@
 #	README
 #	This script will install Homebrew, if it's not already 
 #	installed, and then install a list of apps defined below.
-#	It will then update VS Code with some basic settings, and 
-#	add a custom theme to iTerm.
+#	It will then 
+#	    - update VS Code with some basic settings, and
+#		- add a custom theme to iTerm.
+#
 #	This script WILL NOT however install VS Code extensions.
 #	For not VS Code extensions will be installed manually.
 #
+#	When complete, it will list any apps or npm packages that 
+#	failed to install, if any. Or it will confirm that all
+#	apps and packages were installed successfully.
+#
 #	IMPORTANT NOTE: the iTerm theme file, iTerm-Ronans-Theme.json
-#	should be in the same directory as this script.
+#	is expected to be in a folder called `themes` that's one level
+#	above where this script is.
 # ----------------------------------------------------------------
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+APP_LIST_FILE="$SCRIPT_DIR/../data/apps/apps.txt"
+NPM_PACKAGES_FILE="$SCRIPT_DIR/../data/apps/packages.txt"
+ITERM_THEME_FILE="$SCRIPT_DIR/../data/themes/iTerm-Ronans-Theme.json"
 
 # ------------------------
 # check for homebrew
@@ -35,49 +46,26 @@ fi
 # ------------------------
 # apps for installation
 # ------------------------
-APPS=(
-	android-studio
-	awscli
-	aws-cdk
-	blender
-	curl
-	cursor
-	darktable
-	discord
-	docker-desktop
-	dropbox
-	gimp
-	git
-	git-flow
-	gh
-	google-chrome
-	google-earth-pro
-	iterm2
-	kdiff3
-	keepassx
-	mongodb-compass
-	ngrok
-	nvm
-	opera
-	pgadmin4
-	postman
-	shotcut
-	slack
-	spotify
-	stellarium
-	sublime-text
-	telnet
-	visual-studio-code	
-	vlc
-	warp
-	watchman
-	wget
-	wireshark
-	yarn
-	zoom
-)
-
+APPS=()
 FAILED_APPS=()
+
+# get apps list from file
+echo "--> reading apps list from $APP_LIST_FILE"
+if [ ! -f "$APP_LIST_FILE" ]; then
+	echo "ERROR: apps.txt file not found at $APP_LIST_FILE"
+	exit 1
+fi
+
+while IFS= read -r line || [[ -n "$line" ]]; do
+    # Skip empty lines and lines starting with #
+    if [[ -n "$line" && ! "$line" =~ ^[[:space:]]*# ]]; then
+        # Trim whitespace
+        line=$(echo "$line" | xargs)
+        if [[ -n "$line" ]]; then
+            APPS+=("$line")
+        fi
+    fi
+done < "$APP_LIST_FILE"
 
 echo "--> installing apps..."
 for app in "${APPS[@]}"; do
@@ -105,7 +93,7 @@ elif [[ -f ~/.bashrc ]]; then
 fi
 
 # wait a moment to ensure PATH is updated
-sleep 2
+sleep 4
 
 # Then check if nvm is available, and source directly if not
 if ! command -v nvm &> /dev/null; then
@@ -126,13 +114,31 @@ fi
 # ------------------------
 # Global NPM packages
 # ------------------------
-NPM_PACKAGES=(
-	typescript
-	ts-node
-	@anthropic-ai/claude-code
-)
-
+# NPM_PACKAGES=(
+# 	typescript
+# 	ts-node
+# 	@anthropic-ai/claude-code
+# )
+NPM_PACKAGES=()
 FAILED_NPM_PACKAGES=()
+
+# get npm packages list from file
+echo "--> reading npm packages list from $NPM_PACKAGES_FILE"
+if [ ! -f "$NPM_PACKAGES_FILE" ]; then
+	echo "ERROR: packages.txt file not found at $NPM_PACKAGES_FILE"
+	exit 1
+fi
+
+while IFS= read -r line || [[ -n "$line" ]]; do
+	# Skip empty lines and lines starting with #
+	if [[ -n "$line" && ! "$line" =~ ^[[:space:]]*# ]]; then
+		# Trim whitespace
+		line=$(echo "$line" | xargs)
+		if [[ -n "$line" && ! "$line" =~ ---[[:space::]]*IGNORE[[:space:]]*--- ]]; then
+			NPM_PACKAGES+=("$line")
+		fi
+	fi
+done < "$NPM_PACKAGES_FILE"
 
 if command -v npm &> /dev/null; then
 	echo "--> installing global npm packages..."
@@ -181,7 +187,7 @@ fi
 # ------------------------
 # Set iTerm theme
 # ------------------------
-THEME_FILE="$(pwd)/iTerm-Ronans-Theme.json"
+THEME_FILE="$ITERM_THEME_FILE"
 PROFILE_DIR="$HOME/Library/Application Support/iTerm2/DynamicProfiles"
 
 if [ -d "/Applications/iTerm.app" ]; then
@@ -244,7 +250,7 @@ if ! grep -q "# Custom prompt" "$SHELL_PROFILE" 2>/dev/null; then
 	echo "	custom prompt added"
 fi
 
-# my aliases (if they are not already present)
+# my custom aliases (if they are not already present)
 # Important: again, these are specific to how I work. Modify as needed or simply remove the section.
 if ! grep -q "# Custom Aliases" "$SHELL_PROFILE" 2>/dev/null; then
 	echo "--> adding custom aliases to shell profile..."
@@ -281,8 +287,6 @@ if ! grep -q "# Custom Aliases" "$SHELL_PROFILE" 2>/dev/null; then
 	echo "	custom aliases added"
 fi
 
-
-
 # --------------------------------
 # list apps that failed to install
 # --------------------------------
@@ -310,6 +314,6 @@ fi
 
 echo
 echo "--> finished"
-echo "--> you may need to restart your terminal for all changes to take effect"
-echo "--> please run the git setup script next to finish setting up git"
+echo "--> you will need to restart your terminal for all changes to take effect."
+echo "--> Please run the git setup script next to finish setting up git"
 echo " "
