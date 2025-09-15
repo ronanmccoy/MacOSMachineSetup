@@ -19,6 +19,7 @@ git
 git-flow
 gh
 google-chrome
+google-drive
 # google-earth-pro
 iterm2
 kdiff3
