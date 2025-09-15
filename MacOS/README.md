@@ -7,9 +7,11 @@ Scripts specific to MacOS. Uses Homebrew to install apps.
 ## Instructions
 
 1. Review `apps.txt`.
-2. Run `sh mac_setup.sh` (might need to use `sudo`).
-3. (Optional) Run `sh git_setup.sh` (might need to use `sudo`).
-4. (Optional) Run `sh aws_setup.sh` (might need to use `sudo`).
+2. Run `sh mac_setup.sh`.
+3. (Optional) Run `sh git_setup.sh`.
+4. (Optional) Run `sh aws_setup.sh`.
+
+Important: do not run with `sudo` as this causes some path issues. When running the script you'll need to occasionally enter your password and hit enter for the process to continue.
 
 ### apps.txt
 
