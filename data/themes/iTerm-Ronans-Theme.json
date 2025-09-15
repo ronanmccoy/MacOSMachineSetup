@@ -147,7 +147,7 @@
         "Alpha Component" : 1,
         "Green Component" : 1
       },
-      "Silence Bell" : false,
+      "Silence Bell" : true,
       "Rows" : 56,
       "Guid" : "E88FA350-7BB4-4F3D-9423-0871A25C6FE1",
       "Ansi 14 Color (Dark)" : {
@@ -473,7 +473,7 @@
         "Green Component" : 0.77217715978622437
       },
       "Custom Directory" : "Yes",
-      "Working Directory" : "\/Users",
+      "Working Directory" : "$HOME",
       "ASCII Anti Aliased" : true,
       "Shortcut" : "R",
       "Mouse Reporting" : true,
