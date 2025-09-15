@@ -9,7 +9,7 @@ awscli
 aws-cdk
 blender
 curl
-cursor
+# cursor
 darktable
 discord
 docker-desktop
@@ -19,7 +19,7 @@ git
 git-flow
 gh
 google-chrome
-google-earth-pro
+# google-earth-pro
 iterm2
 kdiff3
 keepassx
