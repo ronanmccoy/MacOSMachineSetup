@@ -251,8 +251,11 @@ echo ""
 # ------------------------
 if confirm "Do you want to run Homebrew cleanup to remove old versions and caches?"; then
     echo -e "${GREEN}--> Running Homebrew cleanup...${NC}"
-    brew cleanup
-    echo -e "${GREEN}--> Homebrew cleanup complete${NC}"
+    if brew cleanup; then
+        echo -e "${GREEN}--> Homebrew cleanup complete${NC}"
+    else
+        echo -e "${RED}--> Homebrew cleanup failed${NC}"
+    fi
 else
     echo "Skipping Homebrew cleanup."
 fi
