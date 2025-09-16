@@ -11,6 +11,7 @@ blender
 curl
 # cursor
 darktable
+dbeaver-community
 discord
 docker-desktop
 dropbox
